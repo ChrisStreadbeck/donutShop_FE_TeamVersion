@@ -1,3 +1,10 @@
 .navbar {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .logo img {
+    height: 50px;
+    width: 50px;
+  }
 }
