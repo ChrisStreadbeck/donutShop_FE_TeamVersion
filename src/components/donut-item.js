@@ -19,10 +19,3 @@ const DonutItem = props => {
 };
 
 export default DonutItem;
-
-// {props.favorite ? (
-//     <img
-//       src="https://upload.wikimedia.org/wikipedia/en/e/e5/Yellow_Star.png"
-//       alt="Gold Star"
-//     />
-//   ) : null}
