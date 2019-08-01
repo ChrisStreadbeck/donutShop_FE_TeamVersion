@@ -2,8 +2,6 @@ import React, { Component } from "react";
 
 import RenderDonuts from "../actions/render-donuts";
 
-import Login from "../pages/login";
-
 import Navbar from "./navbar.js";
 
 import "../style/main.scss";
