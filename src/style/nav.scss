@@ -1,10 +1,26 @@
-.navbar {
+.nav-wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+
+
+  .navbar {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin: 0px;
+    background-color: beige;
+    -webkit-box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
+
+    #btn-cart {
+      display: flex;
+      justify-items: end;
+      border: none;
+    }
+
 
   .logo img {
     height: 50px;
     width: 50px;
+
   }
 }
