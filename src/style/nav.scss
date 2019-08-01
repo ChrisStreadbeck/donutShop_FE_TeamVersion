@@ -1,7 +1,6 @@
 .nav-wrapper {
   display: flex;
 
-
   .navbar {
     display: flex;
     width: 100%;
@@ -17,10 +16,9 @@
       border: none;
     }
 
-
-  .logo img {
-    height: 50px;
-    width: 50px;
-
+    .logo img {
+      height: 50px;
+      width: 50px;
+    }
   }
 }
