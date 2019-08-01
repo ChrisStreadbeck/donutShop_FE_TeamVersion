@@ -10,8 +10,7 @@ import "./style/main.scss";
 
 const routes = {
   "/": () => <App />,
-  "/login": () => <Login />,
-  "/form": () => <DonutForm />
+  "/login": () => <Login />
 };
 
 function Main() {
@@ -20,7 +19,6 @@ function Main() {
       <div className="navbar">
         <A href="/">Home</A>
         <A href="/login">Login</A>
-        <A href="/form">Form</A>
       </div>
       {useRoutes(routes)}
     </div>
