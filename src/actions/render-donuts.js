@@ -17,7 +17,7 @@ const RenderDonuts = () => {
     fetchData();
   }, []);
 
-  const renderDonuts = () => {
+  const handleDonuts = () => {
     return donuts.map(donut => {
       return (
         <DonutItem
@@ -32,7 +32,7 @@ const RenderDonuts = () => {
     });
   };
 
-  return <div>{renderDonuts()}</div>;
+  return <div>{handleDonuts()}</div>;
 };
 
 export default RenderDonuts;
