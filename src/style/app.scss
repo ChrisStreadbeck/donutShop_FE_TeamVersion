@@ -1,0 +1,14 @@
+body {
+  margin: 0px;
+}
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: none;
+  height: 900px;
+  width: 100%;
+}
+
+.showcase-wrapper {
+  display: grid;
+}
