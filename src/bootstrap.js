@@ -18,7 +18,6 @@ function Main() {
     <div className="body">
       <Navbar />
       {useRoutes(routes)}
-      {/* <App /> */}
     </div>
   );
 }
