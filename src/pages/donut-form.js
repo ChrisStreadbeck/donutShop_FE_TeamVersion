@@ -6,6 +6,7 @@ import "../../node_modules/react-dropzone-component/styles/filepicker.css";
 import "../../node_modules/dropzone/dist/min/dropzone.min.css";
 
 import RenderDonuts from "../actions/render-donuts";
+import Navbar from "../components/navbar";
 
 const DonutForm = props => {
   const [title, setTitle] = useState("");
@@ -79,53 +80,50 @@ const DonutForm = props => {
   };
 
   return (
-    <div className="dz-form-wrapper">
-      <form
-        className="dz-form-input"
-        onSubmit={e => handleNewDonutSubmission(e)}
-      >
-        <input
-          className="dz-input"
-          type="text"
-          placeholder="Donut Title"
-          value={title}
-          onChange={e => setTitle(e.target.value)}
-        />
-        <input
-          className="dz-input"
-          type="text"
-          placeholder="Text"
-          value={text}
-          onChange={e => setText(e.target.value)}
-        />
-        <input
-          className="dz-input"
-          type="text"
-          placeholder="Price (no $ signs)"
-          value={price}
-          onChange={e => setPrice(e.target.value)}
-        />
-        <DropzoneComponent
-          className="dz-image"
-          ref={imageRef}
-          config={componentConfig()}
-          djsConfig={djsConfig()}
-          eventHandlers={handleDonutDrop()}
-        >
-          <div className="dz-message">Donut Picture</div>
-        </DropzoneComponent>
-        <button className="dz-btn" type="submit">
-          save
-        </button>
-      </form>
-      <RenderDonuts
-        showUpdate={true}
-        setTitle={setTitle}
-        setText={setText}
-        setPrice={setPrice}
-        setImage={setImage}
-        setId={setId}
-      />
+    <div>
+      <div className="form-wrapper">
+        <form className="form" onSubmit={e => handleNewDonutSubmission(e)}>
+          <div className="inputs-wrapper">
+            <input
+              type="text"
+              placeholder="Donut Title"
+              value={title}
+              onChange={e => setTitle(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Text"
+              value={text}
+              onChange={e => setText(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Price (no $ signs)"
+              value={price}
+              onChange={e => setPrice(e.target.value)}
+            />
+
+            <div className="dropzone-wrapper">
+              <DropzoneComponent
+                className="dropzone-image"
+                ref={imageRef}
+                config={componentConfig()}
+                djsConfig={djsConfig()}
+                eventHandlers={handleDonutDrop()}
+              >
+                <div className="message">Donut Picture</div>
+              </DropzoneComponent>
+            </div>
+
+            <button className="btn" type="submit">
+              SAVE
+            </button>
+          </div>
+        </form>
+        <div className="side-bar">
+          <RenderDonuts form={true} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -2,18 +2,12 @@ import React, { Component } from "react";
 
 import RenderDonuts from "../actions/render-donuts";
 
-import Navbar from "./navbar.js";
-
 import "../style/main.scss";
 
 export default class App extends Component {
   render() {
     return (
       <div className="app-wrapper">
-        <div className="nav-wrapper">
-          <Navbar />
-        </div>
-
         <div className="text-wrapper">
           <p>
             You get a flat, and under the carpet in the trunk is one of those
