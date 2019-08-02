@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import DropzoneComponent from "react-dropzone-component";
+import request from "superagent";
 
 import "../../node_modules/react-dropzone-component/styles/filepicker.css";
 import "../../node_modules/dropzone/dist/min/dropzone.min.css";
-
-import axios from "axios";
-import request from "superagent";
 
 import RenderDonuts from "../actions/render-donuts";
 
@@ -16,9 +14,7 @@ const DonutForm = props => {
   const [image, setImage] = useState("");
   const [id, setId] = useState("");
 
-  const [apiMethod, changeApiMethod] = useState("post");
-
-  const donutRef = React.createRef();
+  const imageRef = React.createRef();
 
   const componentConfig = () => {
     return {
@@ -39,8 +35,8 @@ const DonutForm = props => {
     return {
       addedfile: file => {
         let upload = request
-          .post("https://obscure-taiga-71606.herokuapp.com/add-donut")
-          .field("upload_preset", "cloudy-images")
+          .post("https://api.cloudinary.com/v1_1/cstread/image/upload")
+          .field("upload_preset", "donut-images")
           .field("file", file);
         upload.end((error, response) => {
           if (error) {
@@ -56,26 +52,30 @@ const DonutForm = props => {
 
   const handleNewDonutSubmission = e => {
     e.preventDefault();
-    console.log(image);
-    console.log("something");
-    axios({
-      method: apiMethod,
-      url: "https://obscure-taiga-71606.herokuapp.com/add-donut",
-      data: {
+    fetch("https://obscure-taiga-71606.herokuapp.com/add-donut", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify({
         title: title,
         text: text,
         price: price,
         image: image,
         id: id,
         userId: props.userId
-      }
-    })
-      .then(() => {
-        console.log("you succesfully posted a DONUT!!!");
       })
-      .catch(error => {
-        console.log("database error: ", error.message);
-      });
+    })
+      .then(result => result.json())
+      .then(setTitle(""))
+      .then(setText(""))
+      .then(setPrice(""))
+      .then(setImage(""))
+      .then(setId(""))
+
+      .then(imageRef.current.dropzone.removeAllFiles())
+      .catch(error => console.log("form submit", error));
   };
 
   return (
@@ -107,7 +107,7 @@ const DonutForm = props => {
         />
         <DropzoneComponent
           className="dz-image"
-          ref={donutRef}
+          ref={imageRef}
           config={componentConfig()}
           djsConfig={djsConfig()}
           eventHandlers={handleDonutDrop()}
@@ -120,7 +120,6 @@ const DonutForm = props => {
       </form>
       <RenderDonuts
         showUpdate={true}
-        changeApiMethod={changeApiMethod}
         setTitle={setTitle}
         setText={setText}
         setPrice={setPrice}
