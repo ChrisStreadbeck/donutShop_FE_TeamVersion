@@ -4,6 +4,7 @@
   .donut-container {
     display: flex;
     justify-content: space-between;
+
     .donut-item-wrapper {
       display: flex;
       flex-direction: column;
@@ -20,7 +21,7 @@
         img {
           width: 100px;
           display: grid;
-          grid-template-columns: 1fr 3fr;
+          // grid-template-columns: 1fr 3fr;
           grid-gap: 100px;
         }
       }
@@ -31,7 +32,7 @@
         grid-template-columns: 1fr 1fr;
         color: #2a2822;
         font-size: 1.25em;
-        padding: 10px 25px;
+        padding: 20px 25px;
         letter-spacing: 1px;
       }
       .btn {
