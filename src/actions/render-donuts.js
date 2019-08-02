@@ -32,7 +32,7 @@ const RenderDonuts = () => {
     });
   };
 
-  return <div>{handleDonuts()}</div>;
+  return <div className="donut-container">{handleDonuts()}</div>;
 };
 
 export default RenderDonuts;

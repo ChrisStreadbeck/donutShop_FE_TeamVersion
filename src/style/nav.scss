@@ -1,18 +1,18 @@
 .nav-wrapper {
   display: flex;
+  display: grid;
 
   .navbar {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 100px;
-    margin: 0px;
-    background-color: beige;
+    margin: 5px;
+    background-color: #d7ecd7;
     -webkit-box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
     box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
 
     .logo img {
-      display: flex;
       justify-content: center;
       width: 140px;
       height: 100px;
@@ -22,12 +22,19 @@
     }
 
     .btn {
-      display: flex;
       align-content: flex-end;
       border: none;
-      .cart {
-        display: flex;
-      }
+    }
+
+    .cart {
+      display: flex;
+      justify-content: flex-end;
     }
   }
+}
+
+.text-wrapper {
+  font-family: "Font Awesome 5 Free";
+  padding: 10px 25px;
+  letter-spacing: 1.5px;
 }

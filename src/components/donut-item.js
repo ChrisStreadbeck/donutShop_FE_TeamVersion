@@ -11,7 +11,9 @@ const DonutItem = props => {
       </div>
       <div className="price-button-wrapper">
         <p>${props.price}</p>
-        <button>Buy</button>
+        <div className="btn">
+          <button>Buy</button>
+        </div>
       </div>
       <p>{props.text}</p>
     </div>
