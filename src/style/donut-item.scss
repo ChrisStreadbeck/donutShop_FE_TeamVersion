@@ -1,15 +1,12 @@
 .donut-wrapper {
-  background-color: #d7ecd7;
-
   .donut-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 
     .donut-item-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #d7ecd7;
       height: 100%;
       font-family: "Font Awesome 5 Free";
 
@@ -19,9 +16,9 @@
 
       .img-wrapper {
         img {
-          width: 100px;
+          width: 150px;
+          height: auto;
           display: grid;
-          // grid-template-columns: 1fr 3fr;
           grid-gap: 100px;
         }
       }
@@ -34,13 +31,6 @@
         font-size: 1.25em;
         padding: 20px 25px;
         letter-spacing: 1px;
-      }
-      .btn {
-        display: grid;
-        font-size: 0.25em;
-        padding: 0px 10px;
-        display: flex;
-        align-items: center;
       }
     }
   }

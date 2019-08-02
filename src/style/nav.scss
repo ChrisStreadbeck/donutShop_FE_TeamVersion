@@ -1,58 +1,45 @@
 .nav-wrapper {
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 150px;
   margin: 0px;
-  background-color: rgb(215, 236, 215);
-  -webkit-box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
   box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
 
-  .logo img {
+  .logo {
     display: flex;
     justify-content: center;
-    width: 140px;
-    height: 100px;
     background-image: "/assets/logo/your_car_needs_a_donut.jpg";
     background-repeat: no-repeat;
-    background-size: contain;
+
+    img {
+      height: 150px;
+      width: auto;
+    }
+  }
+
+  .cart {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    padding-right: 25px;
+
+    .btn {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .links {
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    font-family: Georgia, serif;
-    font-size: 16px;
-    letter-spacing: 2px;
-    word-spacing: 2px;
-    color: #000000;
-    font-weight: normal;
-    text-decoration: none;
 
-    #home {
-      justify-content: space-evenly;
+    a {
+      font-size: 24px;
       text-decoration: none;
-      padding: 20px;
-    }
-    #form {
-      justify-content: space-evenly;
-      text-decoration: none;
-      padding: 20px;
+      letter-spacing: 2px;
+      word-spacing: 2px;
+      font-weight: normal;
+      margin: 45px;
     }
   }
-
-  .btn {
-    display: flex;
-    align-content: flex-end;
-    border: none;
-    .cart {
-      display: flex;
-    }
-  }
-}
-
-.text-wrapper {
-  font-family: "Font Awesome 5 Free";
-  padding: 10px 25px;
-  letter-spacing: 1.5px;
 }
