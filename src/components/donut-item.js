@@ -26,17 +26,23 @@ const DonutItem = props => {
       </div>
       <div className="price-button-wrapper">
         <p>${props.price}</p>
-        <div>
-          <button className="btn">Buy</button>
+        <div className="btn">
+          <button>Buy</button>
         </div>
       </div>
       <p>{props.text}</p>
       {props.form ? (
         <div className="update-delete-btns-wrapper">
-          <button className="btn" onClick={() => handleUpdateButtonClick()}>
+          <button
+            className="update-delete-btns"
+            onClick={() => handleUpdateButtonClick()}
+          >
             Update
           </button>
-          <button className="btn" onClick={() => handleDeleteButtonClick()}>
+          <button
+            className="update-delete-btns"
+            onClick={() => handleDeleteButtonClick()}
+          >
             Delete
           </button>
         </div>
