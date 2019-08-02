@@ -1,24 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter } from "react-router-dom";
-import App from "./components/app";
-import reducers from "./reducers";
+import { useRoutes, A } from "hookrouter";
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import Navbar from "./components/navbar";
+import App from "./components/app";
+import DonutForm from "./pages/donut-form";
 
 import "./style/main.scss";
 
+const routes = {
+  "/": () => <App form={false} />,
+  "/form": () => <DonutForm form={true} />
+};
+
 function Main() {
-  ReactDOM.render(
-    <Provider store={createStoreWithMiddleware(reducers)}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>,
-    document.querySelector(".app-wrapper")
+  return (
+    <div className="body">
+      <Navbar />
+      {useRoutes(routes)}
+      <App />
+    </div>
   );
 }
 
-document.addEventListener("DOMContentLoaded", Main());
+ReactDOM.render(<Main />, document.querySelector(".app-wrapper"));

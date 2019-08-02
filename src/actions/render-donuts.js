@@ -2,7 +2,7 @@ import React from "react";
 
 import DonutItem from "../components/donut-item";
 
-const RenderDonuts = () => {
+const RenderDonuts = props => {
   const [donuts, setDonut] = React.useState([]);
 
   React.useEffect(() => {
@@ -27,12 +27,13 @@ const RenderDonuts = () => {
           text={donut.text}
           image={donut.image}
           price={donut.price}
+          form={props.form}
         />
       );
     });
   };
 
-  return <div>{handleDonuts()}</div>;
+  return <div className="donut-container">{handleDonuts()}</div>;
 };
 
 export default RenderDonuts;
