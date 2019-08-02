@@ -6,7 +6,6 @@ import "../../node_modules/react-dropzone-component/styles/filepicker.css";
 import "../../node_modules/dropzone/dist/min/dropzone.min.css";
 
 import RenderDonuts from "../actions/render-donuts";
-import Navbar from "../components/navbar";
 
 const DonutForm = props => {
   const [title, setTitle] = useState("");
