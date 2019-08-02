@@ -1,6 +1,14 @@
 import React from "react";
 
 const DonutItem = props => {
+  const handleUpdateButtonClick = () => {
+    console.log("edit it");
+  };
+
+  const handleDeleteButtonClick = () => {
+    console.log("delete it");
+  };
+
   return (
     <div className="donut-item-wrapper">
       <div className="title-wrapper">
@@ -16,6 +24,22 @@ const DonutItem = props => {
         </div>
       </div>
       <p>{props.text}</p>
+      {props.form ? (
+        <div className="update-delete-btns-wrapper">
+          <button
+            className="update-delete-btns"
+            onClick={() => handleUpdateButtonClick()}
+          >
+            Update
+          </button>
+          <button
+            className="update-delete-btns"
+            onClick={() => handleDeleteButtonClick()}
+          >
+            Delete
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 };
