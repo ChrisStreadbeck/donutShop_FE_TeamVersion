@@ -1,33 +1,32 @@
 .nav-wrapper {
   display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin: 0px;
+  background-color: beige;
+  -webkit-box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
 
-  .navbar {
+  .left-side {
+    display: flex;
+  }
+
+  .logo img {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 140px;
     height: 100px;
-    margin: 0px;
-    background-color: beige;
-    -webkit-box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
-    box-shadow: inset 0px 1px 59px 1px rgba(0, 0, 0, 0.25);
+    background-image: "/assets/logo/your_car_needs_a_donut.jpg";
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 
-    .logo img {
+  .btn {
+    display: flex;
+    align-content: flex-end;
+    border: none;
+    .cart {
       display: flex;
-      justify-content: center;
-      width: 140px;
-      height: 100px;
-      background-image: "/assets/logo/your_car_needs_a_donut.jpg";
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    .btn {
-      display: flex;
-      align-content: flex-end;
-      border: none;
-      .cart {
-        display: flex;
-      }
     }
   }
 }
