@@ -1,12 +1,19 @@
 import React from "react";
 
 const DonutItem = props => {
+  const [donuts, setDonut] = React.useState([]);
+
   const handleUpdateButtonClick = () => {
-    console.log("edit it");
+    console.log("update it");
   };
 
-  const handleDeleteButtonClick = () => {
-    console.log("delete it");
+  const handleDeleteButtonClick = id => {
+    fetch(`https://obscure-taiga-71606.herokuapp.com/donut/${props.id}`, {
+      method: "DELETE"
+    })
+      .then(setDonut(donuts.filter(donut => donut.id !== id)))
+      .then(console.log("Deleted!"))
+      .catch(error => console.log("deletion error", error));
   };
 
   return (
