@@ -1,24 +1,3 @@
 body {
   margin: 0px;
-  background-color: #d7ecd7;
-}
-
-.text-wrapper {
-  font-family: "Font Awesome 5 Free";
-  padding: 10px 25px;
-  letter-spacing: 1.5px;
-  background-color: whitesmoke;
-}
-
-.btn {
-  width: 75px;
-  height: 50px;
-  background-color: whitesmoke;
-  border: 2px black solid;
-  transition: 0.5s ease-in-out;
-  font-size: 14px;
-
-  &:hover {
-    box-shadow: 5px 5px 5px #03191e;
-  }
 }
